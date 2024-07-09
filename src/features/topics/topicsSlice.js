@@ -21,12 +21,13 @@ export const topicsSlice = createSlice({
             };
         },
     },
-    extraReducers: {
-        [addQuiz]: (state, action) => {
+    extraReducers: (builder) => {
+        builder
+        .addCase(addQuiz, (state, action) => {
             // payload: { id: '123', name: 'quiz name', topicId: '456', cardIds: ['1', '2', '3', ...]}
             const { id, topicId } = action.payload;
             state.topics[topicId].quizIds.push(id);
-        }
+        })
     }
 })
 

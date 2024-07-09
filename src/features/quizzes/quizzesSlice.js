@@ -17,7 +17,7 @@ export const quizzesSlice = createSlice({
             };
         }
 
-    }
+    },
 });
 
 export const selectQuizzes = (state) => state.quizzes.quizzes;
